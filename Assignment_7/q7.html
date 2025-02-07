@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Find second largest</title>
+</head>
+<body>
+<button onclick="fndSecond()">Find</button>
+<script>
+    function fndSecond() {
+        const inp = prompt("enter numbers (comma separated):");
+        const arr = inp.split(',').map(x => parseInt(x.trim()));
+        if (arr.length < 2) {
+            window.alert("at least two numbers required");
+            return;
+        }
+        let max = -Infinity, secMax = -Infinity;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                secMax = max;
+                max = arr[i];
+            } 
+            else if (arr[i] > secMax && arr[i] !== max) {
+                secMax = arr[i];
+            }
+        }
+        if (secMax === -Infinity) {
+            window.alert("no second largest");
+        } 
+        else {
+            window.alert("second largest: " + secMax);
+        }
+    }
+</script>
+</body>
+</html>
