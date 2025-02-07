@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>Palindrome Checker</title></head>
+    <body>
+        <button onclick="check()">Start</button>
+        <script>
+            function check(){
+                let x=prompt("enter a string: ");
+                let y=x.toLowerCase().replace(/[^a-z0-9]/g,'')
+                let rev=y.split('').reverse().join('');
+                window.alert(y==rev? 'palindrome!': 'not palindrome!');
+            }
+        </script>
+    </body>
+</html>
