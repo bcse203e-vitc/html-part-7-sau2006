@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Find Duplicates in an Array</title>
+</head>
+<body>
+<h2>Find Duplicates in an Array</h2>
+<button onclick="findDuplicates()">Find Duplicates</button>
+<script>
+    function findDuplicates() {
+        const input = prompt("Enter an array of numbers (comma-separated):");
+        const arr = input.split(',').map(item => parseInt(item.trim()));
+        const seen = new Set();
+        const duplicates = new Set();
+        for (let i = 0; i < arr.length; i++) {
+            if (seen.has(arr[i])) {
+                duplicates.add(arr[i]);
+            } else {
+                seen.add(arr[i]);
+            }
+        }
+        if (duplicates.size > 0) {
+            window.alert("Duplicate values: " + [...duplicates].join(", "));
+        } else {
+            window.alert("No duplicates found");
+        }
+    }
+</script>
+</body>
+</html>
