@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sort array without sort()</title>
+</head>
+<body>
+<button onclick="sortArray()">Sort</button>
+<script>
+    function sortArray() {
+        const arr = prompt("enter numbers (comma separated):").split(',').map(Number);
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; 
+                }
+            }
+        }
+        alert("sorted: " + arr.join(", "));
+    }
+</script>
+</body>
+</html>
