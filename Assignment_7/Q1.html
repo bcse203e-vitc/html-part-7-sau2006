@@ -1,1 +1,22 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head><title>random number guesser</title></head>
+    <body>
+        <button onclick="playGame()">Start Game</button>
+        <script>
+            function playGame(){
+                let num=Math.floor(Math.random() *100) + 1, attempts=5, guess;
+                while(attempts>0){
+                    guess=parseInt(prompt("enter number: attempts left=${attempts}"));
+                    if(guess===num){
+                        window.alert("correct!")
+                        return;
+                    }
+                    window.alert(guess>num? 'too high!': 'too low!');
+                    attempts--;
+                }
+                window.alert('out of attempts! number was ${num}');
+            }
+        </script>
+    </body>
+</html>
