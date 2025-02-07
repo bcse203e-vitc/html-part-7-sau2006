@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic table generator</title>
+</head>
+<body>
+<button onclick="generateTable()">Generate Table</button>
+<div id="tableContainer"></div>
+<script>
+    function generateTable() {
+        const rows = prompt("enter no. of rows:");
+        const cols = prompt("enter no. of columns:");
+        if (isNaN(rows) || isNaN(cols) || rows <= 0 || cols <= 0) {
+            alert("enter valid positive numbers for rows and columns");
+            return;
+        }
+        let table = "<table border='1' style='border-collapse: collapse; width: 50%;'>";      
+        for (let i = 0; i < rows; i++) {
+            table += "<tr>";
+            for (let j = 0; j < cols; j++) {
+                table += `<td>row ${i + 1}, col ${j + 1}</td>`;
+            }
+            table += "</tr>";
+        }
+        table += "</table>";      
+        document.getElementById("tableContainer").innerHTML = table;
+    }
+</script>
+</body>
+</html>
