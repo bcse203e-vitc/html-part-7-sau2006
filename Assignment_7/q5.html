@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Character and Word Counter</title>
+</head>
+<body>
+<h2>Character and Word Counter</h2>
+<button onclick="countText()">Count</button>
+<script>
+    function countText() {
+        const inputText = prompt("Enter text to count characters and words:");
+        if (inputText !== null) {
+            const charCount = inputText.length;
+            const words = inputText.split(/\s+/);
+            const wordCount = words.length > 0 && words[words.length - 1] === "" ? words.length - 1 : words.length;
+            
+            window.alert("Number of Characters (including spaces): " + charCount + "\nNumber of Words: " + wordCount);
+        }
+    }
+</script>
+</body>
+</html>
